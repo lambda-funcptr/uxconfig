@@ -27,3 +27,9 @@ if [ -f "Xresources/.Xresources.$(hostname -s).config" ]; then
     echo "" >> build/.Xresources
     echo "Xresources.Xresources.$(hostname -s).config" >> build/.Xresources
 fi
+
+for file in zsh/*.zshrc; do
+    echo "# From: $file" >> build/.zshrc
+    cat $file >> build/.zshrc;
+    echo "" >> build/.zshrc
+done
