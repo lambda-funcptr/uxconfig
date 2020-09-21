@@ -4,6 +4,7 @@ general {
   color_good = "#00A200"
   color_degraded = "#9D9D00"
   color_bad = "#FF0000"
+  interval = 10
 }
 
 # order += "ipv6"
