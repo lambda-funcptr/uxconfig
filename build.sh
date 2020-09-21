@@ -2,28 +2,28 @@
 
 cd $(dirname $0)
 
-rm config.i3
-rm config.i3status
+rm -r build
+mkdir -p build
 
 for file in i3/*.config; do
-    echo "# From: $file" >> config.i3
-    cat $file >> config.i3;
-    echo "" >> config.i3
+    echo "# From: $file" >> build/config.i3
+    cat $file >> build/config.i3;
+    echo "" >> build/config.i3
 done
 
 if [ -f "i3/host-specific/$(hostname -s).config" ]; then
-    echo "# From: i3/host-specific/$(hostname -s).config" >> config.i3
-    cat "i3/host-specific/$(hostname -s).config" >> config.i3
+    echo "# From: i3/host-specific/$(hostname -s).config" >> build/config.i3
+    cat "i3/host-specific/$(hostname -s).config" >> build/config.i3
 fi;
 
-cat "i3/i3status/theme" >> config.i3status;
+cat "i3/i3status/theme" >> build/config.i3status;
 
-cp Xresources/.Xresources .Xresources
+cp Xresources/.Xresources build/.Xresources
 
 echo "" >> .Xresources
-cat external/solarized/Xresources.light >> .Xresources
+cat external/solarized/Xresources.light >> build/.Xresources
 
 if [ -f "Xresources/.Xresources.$(hostname -s).config" ]; then
-    echo "" >> .Xresources
-    echo "Xresources.Xresources.$(hostname -s).config" >> .Xresources
+    echo "" >> build/.Xresources
+    echo "Xresources.Xresources.$(hostname -s).config" >> build/.Xresources
 fi
