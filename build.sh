@@ -20,7 +20,7 @@ cat "i3/i3status/theme" >> build/config.i3status;
 
 cp Xresources/.Xresources build/.Xresources
 
-echo "" >> .Xresources
+echo "" >> build/.Xresources
 cat external/solarized/Xresources.light >> build/.Xresources
 
 if [ -f "Xresources/.Xresources.$(hostname -s).config" ]; then
