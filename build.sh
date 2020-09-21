@@ -17,3 +17,13 @@ if [ -f "i3/host-specific/$(hostname -s).config" ]; then
 fi;
 
 cat "i3/i3status/theme" >> config.i3status;
+
+cp Xresources/.Xresources .Xresources
+
+echo "" >> .Xresources
+cat external/solarized/Xresources.light >> .Xresources
+
+if [ -f "Xresources/.Xresources.$(hostname -s).config" ]; then
+    echo "" >> .Xresources
+    echo "Xresources.Xresources.$(hostname -s).config" >> .Xresources
+fi
