@@ -14,7 +14,7 @@ fi
 if [ ! -z "$(command -v squeekboard)" ]; then
     echo "Installing custom squeekboard keyboards..."
     mkdir -p ~/.local/share/squeekboard/keyboards
-    cp config/squeekboard/* ~/.local/share/squeekboard/keyboards
+    cp squeekboard/* ~/.local/share/squeekboard/keyboards
 fi
 
 cp .zshrc ~/.zshrc
