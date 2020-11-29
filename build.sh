@@ -42,3 +42,5 @@ for file in zsh/*.zshrc; do
     cat $file >> build/.zshrc
     echo "" >> build/.zshrc
 done
+
+cp -r squeekboard build/squeekboard
