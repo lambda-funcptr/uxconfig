@@ -43,4 +43,8 @@ for file in zsh/*.zshrc; do
     echo "" >> build/.zshrc
 done
 
-cp -r squeekboard build/squeekboard
+if [ -f "zsh/host-specific/$(hostname -s).zshrc" ]; then
+    echo "# From: zsh/host-specific/$(hostname -s).zshrc$" >> build/.zshrc
+    cat "zsh/host-specific/$(hostname -s).zshrc" >> build/.zshrc
+    echo "" >> build/.zshrc
+fi
