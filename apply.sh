@@ -11,12 +11,6 @@ if [ ! -z "$(command -v i3)" ]; then
     cp config.i3status ~/.config/i3status/config
 fi
 
-if [ ! -z "$(command -v squeekboard)" ]; then
-    echo "Installing custom squeekboard keyboards..."
-    mkdir -p ~/.local/share/squeekboard/keyboards
-    cp squeekboard/* ~/.local/share/squeekboard/keyboards
-fi
-
 cp .zshrc ~/.zshrc
 
 if [ ! -z "$(command -v i3)" ]; then
